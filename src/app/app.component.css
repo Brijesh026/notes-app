@@ -1,0 +1,96 @@
+.final {
+  margin-top: 100px;
+  margin-left: 300px;
+  text-align: center;
+  height: auto;
+  width: ato;
+}
+
+hr {
+  border: 6px solid pink;
+  margin-left: 0px;
+  width: 600px;
+}
+.notes-container {
+    position: center;
+    top: 20px;
+    bottom: 200px;
+    height: 280px;
+    width: 600px;
+  }
+  
+  .notes-events {
+    width: 150px;
+    height: 50px;
+    overflow: auto;
+    border: 2px solid pink;
+  }
+
+  .main-events {
+    overflow: auto;
+    border: 2px solid pink;
+  }
+  
+  .pos {
+    margin-top: 15px;
+    float: right;
+    width: 200px;
+    height: 55px;
+  }
+
+  .a1 {
+    text-decoration: none;
+    color: gray;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .notes-container {
+      position: center;
+      top: 20px;
+      height: 140px;
+      width: 400px;
+    }
+    
+    .notes-events {
+      width: 100px;
+      height: 40px;
+      overflow: auto;
+      border: 2px solid #555;
+    }
+
+    .main-events {
+      overflow: auto;
+      border: 2px solid #555;
+    }
+
+    .notes-container, .notes-events, .main-events {
+      font-size: 7px;
+    }
+
+    .final {
+      margin-left: 50px;
+      margin-top: 50px;
+      text-align: center;
+      border: 2px solid pink;
+      height: 300px;
+      width: 550px;
+    }
+
+    hr {
+      border: 2px solid pink;
+      margin-bottom: 2px;
+      width: 500px;
+    }
+
+    button {
+      font-size: 10px;
+      
+    }
+
+    .pos {
+      margin-top: 15px;
+      float: right;
+      width: 200px;
+      height: 35px;
+    }
+  }
