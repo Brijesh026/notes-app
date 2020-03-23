@@ -1,5 +1,16 @@
+
+textarea{
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: hidden;
+  text-align: center;
+  resize: none;
+  background-color: white;
+  color: blue;
+}
+
 h1 {
-  margin-left: 400px;
+  margin-left: 430px;
   padding-top: 50px;
   text-decoration: greenyellow;
   color: greenyellow;
@@ -7,7 +18,7 @@ h1 {
 }
 
 .final {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 300px;
   text-align: center;
   height: auto;
@@ -63,10 +74,10 @@ hr {
     border: 2px solid greenyellow;
   }
 
-  .a2 {
+  /* .a2 {
     text-decoration: none;
     color: blue;
-  }
+  } */
 
   .a3 {
     width: 400px;
@@ -75,6 +86,18 @@ hr {
   }
 
   @media only screen and (max-width: 768px) {
+    
+    textarea {
+      height: 35px;
+      width: 350px;
+      box-sizing: border-box;
+      border: hidden;
+      text-align: center;
+      resize: none;
+      background-color: white;
+      color: blue;
+    }
+    
     h1 {
       margin-left: 125px;
       padding-top: 20px;
@@ -98,6 +121,7 @@ hr {
     .main-events {
       overflow: auto;
       border: 2px solid greenyellow;
+      width: 420px;
     }
 
     .notes-container, .notes-events, .main-events {
@@ -130,4 +154,4 @@ hr {
       height: 35px;
     }
 
-  }
+ }

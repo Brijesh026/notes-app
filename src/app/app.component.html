@@ -3,7 +3,8 @@
   <div class="container">
   <div class="col-md-12">
     <div class="row">
-      <button type="button" class="btn btn-outline-primary btn-lg m-3" (click)="sidenavToggle()">{{sidebarStatus}}</button>
+      <button type="button" class="btn btn-outline-primary btn-lg m-3" 
+      (click)="sidenavToggle()">{{sidebarStatus}}</button>
       <button type="button" class="btn btn-outline-success btn-lg m-3" (click)="addNotes()">Add</button>
       <button type="button" class="btn btn-outline-danger btn-lg m-3" (click)="deleteNotes()">Delete</button>
       <input type="text" #search class="pos" [placeholder]="searchPlaceholder" 
@@ -34,21 +35,15 @@
       
       <mat-drawer-content class="main-events">
         <div class="a3" *ngIf="!noteSelected && notes.length !== 0">
-            <div contentEditable="false" class="text-center"
-            (input)="notes[0].date=$event.target.innerText">{{notes[0].date}}</div>
-            <b><div contentEditable="true" class="text-center"
-            (input)="notes[0].title=$event.target.innerText">{{notes[0].title}}</div></b>
-            <div contentEditable="true" class="text-center" 
-            (input)="notes[0].body=$event.target.innerText">{{notes[0].body}}</div>
+          <textarea type="text" [rows]="1" [cols]="cols" required  readonly [(ngModel)]="notes[0].date"></textarea>
+          <textarea type="text" [rows]="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].title"></textarea>
+          <textarea type="text" [rows]="4" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].body"></textarea>
         </div>
 
         <div class="a3" *ngIf="noteSelected  && notes.length > 0">
-          <div contentEditable="false" class="text-center" 
-               (input)="notes[index].date=$event.target.innerText">{{notes[index].date}}</div>
-          <b><div contentEditable="true" class="text-center" 
-               (input)="notes[index].title=$event.target.innerText">{{notes[index].title}}</div></b>
-          <div contentEditable="true" class="text-center" 
-               (input)="notes[index].body=$event.target.innerText">{{notes[index].body}}</div>
+          <textarea class="b1" type="text" [rows]="1" [cols]="cols" required  readonly [(ngModel)]="notes[index].date"></textarea>
+          <textarea type="text" [rows]="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].title"></textarea>
+          <textarea type="text" [rows]="4" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].body"></textarea>
         </div>
       </mat-drawer-content>
 
