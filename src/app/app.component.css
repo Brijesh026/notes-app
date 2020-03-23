@@ -1,5 +1,5 @@
 h1 {
-  margin-left: 460px;
+  margin-left: 400px;
   padding-top: 50px;
   text-decoration: greenyellow;
   color: greenyellow;
@@ -41,8 +41,6 @@ hr {
   .side-events {
     width: 150px;
     height: 20px;
-    overflow: auto;
-    display: -ms-inline-flexbox;
   }
 
   .main-events {
