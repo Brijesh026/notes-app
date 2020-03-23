@@ -124,6 +124,7 @@ searchNotes(search: any){
   }
 
   focusIn(){
+    this.searchFlag = false;
     let c = this.searchedNotes.length-1;
     while(c>0){
       this.searchedNotes.splice(c,1);
