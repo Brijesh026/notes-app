@@ -17,6 +17,10 @@ h1 {
   font-size: 40px;
 }
 
+h1:hover{
+  color: red;
+}
+
 .final {
   margin-top: 20px;
   margin-left: 300px;
@@ -72,6 +76,10 @@ hr {
     text-decoration: none;
     color: blue;
     border: 2px solid greenyellow;
+  }
+
+  .a1:hover{
+    background-color: tomato;
   }
 
   /* .a2 {
