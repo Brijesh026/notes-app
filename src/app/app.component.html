@@ -1,23 +1,45 @@
+<h1> Your personal NotesApp !</h1>
 <div class="final">
-<div class="container">
+  <div class="container">
   <div class="col-md-12">
     <div class="row">
     <button type="button" class="btn btn-outline-primary btn-lg m-3" (click)="sidenavToggle()">{{sidebarStatus}}</button>
     <button type="button" class="btn btn-outline-success btn-lg m-3" (click)="addNotes()">Add</button>
     <button type="button" class="btn btn-outline-danger btn-lg m-3" (click)="deleteNotes()">Delete</button>
-    <input type="text" class="pos">
+    <input type="text" #search class="pos" placeholder="Search here..">
   </div>
   <hr>
+  
   <mat-drawer-container class="notes-container">
+      
       <mat-drawer mode="side" [(opened)]="opened">
-        <div *ngFor="let note of notes">
-          <a href="#note" class="a1"><div class="notes-events" id="note" (click)="showNotes(note)">{{ note }}</div></a>
-        </div>
+          <div *ngFor="let note of notes" class="side-events a1" (click)="selectNote(note)">
+              <div><b>{{note.title}}</b></div>
+              <div>{{note.date}}</div>
+              <div>{{note.body}}</div>
+          </div>
       </mat-drawer>
-      <mat-drawer-content>
-          <textarea rows="11" (cols)="columns" wrap="soft" *ngIf="!noteSelected" class="form-control main-events" [(ngModel)]="notes[0]"></textarea>
-          <textarea rows="11" (cols)="columns" wrap="soft" *ngIf="noteSelected" class="form-control main-events" [(ngModel)]="notes[index]"></textarea>
+      
+      <mat-drawer-content class="main-events">
+        <div class="a3" *ngIf="!noteSelected && notes.length !== 0">
+          <div contentEditable="true" class="text-center" 
+          (input)="notes[0].date=$event.target.innerText">{{notes[0].date}}</div>
+          <b><div contentEditable="true" class="text-left"
+          (input)="notes[0].title=$event.target.innerText">{{notes[0].title}}</div></b>
+          <div contentEditable="true" class="text-left" 
+          (input)="notes[0].body=$event.target.innerText">{{notes[0].body}}</div>
+        </div>
+
+        <div class="a3" *ngIf="noteSelected">
+          <div contentEditable="true" class="text-center" 
+          (input)="notes[index].date=$event.target.innerText">{{notes[index].date}}</div>
+          <b><div contentEditable="true" class="text-left"
+           (input)="notes[index].title=$event.target.innerText">{{notes[index].title}}</div></b>
+          <div contentEditable="true" class="text-left" 
+           (input)="notes[index].body=$event.target.innerText">{{notes[index].body}}</div>
+        </div>
       </mat-drawer-content>
+
   </mat-drawer-container>
   </div>
 </div>
