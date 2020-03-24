@@ -82,11 +82,6 @@ hr {
     background-color: tomato;
   }
 
-  /* .a2 {
-    text-decoration: none;
-    color: blue;
-  } */
-
   .a3 {
     width: 400px;
     height: 250px;
@@ -95,19 +90,30 @@ hr {
 
   @media only screen and (max-width: 768px) {
     
+    mat-drawer {
+      width: 110px;
+      text-align: left;
+    }
+
+    .side-events {
+      width: 87px;
+    }
+
     textarea {
+      padding: 12px 20px;
       height: 35px;
-      width: 350px;
+      width: 445px;
       box-sizing: border-box;
       border: hidden;
-      text-align: center;
+      text-align: left;
       resize: none;
       background-color: white;
       color: blue;
+      scrollbar-width: none;
     }
     
     h1 {
-      margin-left: 125px;
+      margin-left: 130px;
       padding-top: 20px;
       color: greenyellow;
       font-size: 30px;
@@ -117,41 +123,49 @@ hr {
       position: center;
       top: 20px;
       height: 140px;
-      width: 400px;
+      width: 450px;
     }
     
     .notes-events {
-      width: 100px;
+      width: 130px;
       height: 10px;
       overflow: auto;
     }
 
     .main-events {
-      overflow: auto;
       border: 2px solid greenyellow;
-      width: 420px;
+      overflow: auto;
+      height: 140px;
+      width: 450px;
     }
 
+    .a3 {
+      width: 440px;
+      height: 120px;
+      color: blue;
+      margin-right: 0px;
+    }
+  
     .notes-container, .notes-events, .main-events {
-      font-size: 9px;
+      font-size: 12px;
     }
 
     .final {
-      margin-left: 50px;
-      margin-top: 20px;
+      margin-left: 20px;
       text-align: center;
-      height: 200px;
+      height: 300px;
       width: 550px;
+      border: 1px solid tomato;
     }
 
     hr {
       border: 2px solid greenyellow;
       margin-bottom: 2px;
-      width: 400px;
+      width: 450px;
     }
 
     button, input {
-      font-size: 10px;
+      font-size: 14px;
       border: 1px solid greenyellow;
     }
 

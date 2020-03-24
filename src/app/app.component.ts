@@ -36,7 +36,7 @@ export class AppComponent {
 
   pastDate = formatDate(new Date(2020,2,20,22,30,20), 'MMMM d, y h:mm:ss a','en-US');
   
-  notes = [{title: "Title", date: this.pastDate, body: "Text"}];
+  notes = [{title: "Title", date: this.pastDate, body: "Note"}];
   cols: number = 57;
   index: number = 0;
   opened: boolean = true;
@@ -85,9 +85,9 @@ searchNotes(search: any){
     const presentDate = formatDate(new Date(), 'MMMM d, y h:mm:ss a','en-US');
     this.notes = [
       {
-        title: `Title New note${this.notes.length+1}`,
+        title: `Title${this.notes.length+1}`,
         date: presentDate,
-        body: `Text${this.notes.length+1}`
+        body: `Note${this.notes.length+1}`
       }, ...this.notes
     ]
     if(this.notes.length === 1){
