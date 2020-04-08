@@ -3,10 +3,10 @@
   <div class="container">
   <div class="col-md-12">
     <div class="row">
-      <button type="button" class="btn btn-outline-primary btn-lg m-3" 
+      <button type="button" class="btn btn-primary btn-lg m-3" 
       (click)="sidenavToggle()">{{sidebarStatus}}</button>
-      <button type="button" class="btn btn-outline-success btn-lg m-3" (click)="addNotes()">Add</button>
-      <button type="button" class="btn btn-outline-danger btn-lg m-3" (click)="deleteNotes()">Delete</button>
+      <button type="button" class="btn btn-success btn-lg m-3" (click)="addNotes()">Add</button>
+      <button type="button" class="btn btn-danger btn-lg m-3" (click)="deleteNotes()">Delete</button>
       <input type="text" #search class="pos" [placeholder]="searchPlaceholder" 
       [disabled]="searchDisabled" (keyup)="searchNotes(search)" 
       (focus)="focusIn()" (focusout)="focusOut(search)">
@@ -14,9 +14,9 @@
 
   <hr>
   
-  <mat-drawer-container class="notes-container">
+  <mat-drawer-container class="notes-container cover">
       
-      <mat-drawer mode="side" [(opened)]="opened">
+      <mat-drawer mode="side" [(opened)]="opened" class="cover">
           <div *ngIf="!searchFlag">
             <div *ngFor="let note of notes" class="side-events a1" (click)="selectNote(note)">
                 <div><b>{{note.title}}</b></div>
@@ -35,15 +35,15 @@
       
       <mat-drawer-content class="main-events">
         <div class="a3" *ngIf="!noteSelected && notes.length !== 0">
-          <textarea type="text" [rows]="1" [cols]="cols" required  readonly [(ngModel)]="notes[0].date"></textarea>
-          <textarea type="text" [rows]="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].title"></textarea>
-          <textarea type="text" [rows]="4" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].body"></textarea>
+          <textarea type="text" rows="1" [cols]="cols" required  readonly [(ngModel)]="notes[0].date"></textarea>
+          <textarea type="text" rows="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].title"></textarea>
+          <textarea type="text" rows="5" [cols]="cols" wrap="soft" [(ngModel)]="notes[0].body"></textarea>
         </div>
 
         <div class="a3" *ngIf="noteSelected  && notes.length > 0">
-          <textarea class="b1" type="text" [rows]="1" [cols]="cols" required  readonly [(ngModel)]="notes[index].date"></textarea>
-          <textarea type="text" [rows]="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].title"></textarea>
-          <textarea type="text" [rows]="4" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].body"></textarea>
+          <textarea class="b1" type="text" rows="1" [cols]="cols" required  readonly [(ngModel)]="notes[index].date"></textarea>
+          <textarea type="text" rows="3" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].title"></textarea>
+          <textarea type="text" rows="5" [cols]="cols" wrap="soft" [(ngModel)]="notes[index].body"></textarea>
         </div>
       </mat-drawer-content>
 
